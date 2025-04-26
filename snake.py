@@ -50,3 +50,10 @@ class Snake:
             y_pos = self.segments[seg_num - 1].ycor()
             self.segments[seg_num].goto(x_pos, y_pos)
         self.head.forward(MOVE_DISTANCE)
+
+    def reset(self):
+        for seg in self.segments:
+            seg.goto(1000 , 1000)
+        self.segments.clear()
+        self.start()
+        self.head = self.segments[0]
